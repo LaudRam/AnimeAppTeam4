@@ -6,7 +6,7 @@ import dill
 import pickle
 from sklearn.metrics.pairwise import cosine_similarity
 
-# @st.cache_data
+@st.cache_data
 def load_svd():
     with open("svd_best_model.pkl", "rb") as mf:
         svd_model = pickle.load(mf)
