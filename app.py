@@ -6,7 +6,6 @@ import dill
 import pickle
 from sklearn.metrics.pairwise import cosine_similarity
 import gdown
-from joblib import load
 
 @st.cache_data
 def load_svd():
