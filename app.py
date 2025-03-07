@@ -6,7 +6,7 @@ import dill
 import pickle
 from sklearn.metrics.pairwise import cosine_similarity
 
-@st.cache_data
+# @st.cache_data
 def load_svd():
     with open("svd_best_model.pkl", "rb") as mf:
         svd_model = pickle.load(mf)
@@ -17,15 +17,15 @@ def load_svd():
 # Load the pickled files (cached version)
 svd_model = load_svd()
 
-@st.cache_data
+# @st.cache_data
 def load_train_data():
     return pd.read_csv("train.csv")
 
-@st.cache_data
+# @st.cache_data
 def load_anime_data():
     return pd.read_csv("df_anime_cleaned.csv")
 
-@st.cache_data
+# @st.cache_data
 def load_tfidf_data():
     return pd.read_csv("tfidf_df_reduced.csv")
 
@@ -67,7 +67,7 @@ top_popular_anime = df_anime.sort_values(by='ave_rating',ascending=False).head(1
 top_popular_anime = top_popular_anime['anime_id'].tolist()
 
 
-@st.cache_data
+# @st.cache_data
 def get_recommendations_collaborative(user_id, n=10):
     # Check if user exists in the training data,if not return highest rated animes(cold start feature)
     if user_id not in df_train['user_id'].unique():
