@@ -67,7 +67,7 @@ top_popular_anime = df_anime.sort_values(by='ave_rating',ascending=False).head(1
 top_popular_anime = top_popular_anime['anime_id'].tolist()
 
 
-# @st.cache_data
+@st.cache_data
 def get_recommendations_collaborative(user_id, n=10):
     # Check if user exists in the training data,if not return highest rated animes(cold start feature)
     if user_id not in df_train['user_id'].unique():
