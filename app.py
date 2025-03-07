@@ -6,18 +6,12 @@ import dill
 import pickle
 from sklearn.metrics.pairwise import cosine_similarity
 import gdown
+from joblib import load
 
 @st.cache_data
-# def load_svd():
-#     with open("svd_best_model.pkl", "rb") as mf:
-#         svd_model = pickle.load(mf)
-
-#     return svd_model
-
-
 def load_svd():
-    # Google Drive shareable link (replace with your actual file ID)
-    file_id = '1752PsxdfaRYolFLqugXB2X3yab_qjq6f'
+    # Google Drive link
+    file_id = '1EtGqVYs0FwImkpRe8JWac_PeWowR8slG'
     url = f'https://drive.google.com/uc?export=download&id={file_id}'
 
     # Download the file
@@ -29,17 +23,13 @@ def load_svd():
 
     return svd_model
 
-
 # Load the pickled files (cached version)
 svd_model = load_svd()
 
 @st.cache_data
 def load_train_data():
-    # return pd.read_csv("train.csv")
-
-    url_train = "https://drive.google.com/uc?export=download&id=1Tm6pM1Xw-LBYkseZU0VST2LQs_JifERM"
-    return pd.read_csv(url_train)
-
+    url = "https://drive.google.com/uc?export=download&id=150NHENl8kAWP2-GeRqI3yQjMoZ_cdFu6"
+    return pd.read_csv(url)
 
 @st.cache_data
 def load_anime_data():
