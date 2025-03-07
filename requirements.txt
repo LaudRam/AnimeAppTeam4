@@ -7,5 +7,6 @@ scikit-learn
 scikit-surprise
 scipy
 cython
+gdown
 
 
