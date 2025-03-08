@@ -25,7 +25,7 @@ def load_train_data():
 def load_anime_data():
     return pd.read_csv("df_anime_cleaned.csv")
 
-# @st.cache_data
+@st.cache_data
 def load_tfidf_data():
     return pd.read_csv("tfidf_df_reduced.csv")
 
